@@ -25,12 +25,20 @@ import java.util.logging.Logger;
  * @author thang
  */
 public class XeDapIO {
-    public static void write(XeDap xd, String path){
+    public static void append(XeDap xd, String path){
         File file = new File(path);
+        BufferedWriter os = null;
+        if (!file.exists()){
+            try {
+                file.createNewFile();
+            } catch (IOException ex) {
+                Logger.getLogger(XeDapIO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
         
         try {
-            BufferedWriter os = new BufferedWriter(new OutputStreamWriter(
-                   new FileOutputStream(file)));
+            os = new BufferedWriter(new OutputStreamWriter(
+                   new FileOutputStream(file, true)));
             
             os.write(xd.toString());
             os.newLine();
@@ -39,16 +47,24 @@ public class XeDapIO {
             Logger.getLogger(XeDapIO.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Logger.getLogger(XeDapIO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                os.close();
+            } catch (IOException ex) {
+                Logger.getLogger(XeDapIO.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
     
+//    public static void 
+    
     public static ArrayList<XeDap> read(String path){
-        System.out.println("Read was called");
         File file = new File(path);
         System.out.println(file.getAbsolutePath());
         ArrayList<XeDap> xds = new ArrayList<>();
+        BufferedReader is = null;
         try {
-            BufferedReader is = new BufferedReader(
+            is = new BufferedReader(
                     new InputStreamReader(new FileInputStream(file)));
             String line;
             while((line = is.readLine()) != null) {
@@ -69,6 +85,11 @@ public class XeDapIO {
         } catch (IOException ex) {
             Logger.getLogger(XeDapIO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
+            try {
+                if (is != null) is.close();
+            } catch (IOException ex) {
+                Logger.getLogger(XeDapIO.class.getName()).log(Level.SEVERE, null, ex);
+            }
             return xds;
         }
     }

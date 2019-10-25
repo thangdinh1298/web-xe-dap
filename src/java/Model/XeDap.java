@@ -16,6 +16,9 @@ public class XeDap {
     private int yearManufactured;
     private float price; //USD
 
+    public XeDap() {
+    }
+
     public XeDap(int code, String des, int yearManufactured, float price) {
         this.code = code;
         this.des = des;
@@ -58,7 +61,7 @@ public class XeDap {
     @Override
     public String toString() {
         return this.getCode() + "|" + this.getDes() + "|" 
-                + this.getPrice() + "|" + this.getYearManufactured();
+               + this.getYearManufactured()+ "|" + this.getPrice();
     }
     
     

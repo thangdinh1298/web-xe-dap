@@ -5,6 +5,8 @@
  */
 package Controller;
 
+import Model.XeDap;
+import Model.XeDapIO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -32,17 +34,24 @@ public class AddProductServlet extends HttpServlet {
         String price = req.getParameter("price");
         String yearManufactured = req.getParameter("yearManufactured");
         
+        Integer prodCode = 0;
+        Integer prodYearManufactured = 0;
+        Float prodPrice = 0f;
+        
+        
         String msg1 = "";
         String msg2 = "";
         String msg3 = "";
         String msg4 = "";
         String url;
+       
         
         if (code == ""){
             msg1 = "Please fill out the product code";
         } else {
             try {
-                Integer.parseInt(code);
+                prodCode = Integer.parseInt(code);
+                req.setAttribute("code", code);
             } catch (NumberFormatException e) {
                 msg1 = "Product code is not a valid Integer";
             }
@@ -50,13 +59,16 @@ public class AddProductServlet extends HttpServlet {
         
         if (desc == ""){
             msg2 = "Please fill out the description";
-        } 
+        } else {
+            req.setAttribute("des", desc);
+        }
         
         if (price == ""){
             msg3 = "Please fill out the price";
         } else {
             try {
-                Float.parseFloat(price);
+                prodPrice = Float.parseFloat(price);
+                req.setAttribute("price", price);
             } catch (NumberFormatException e) {
                 msg3 = "Price is not a valid float";
             }
@@ -66,7 +78,8 @@ public class AddProductServlet extends HttpServlet {
             msg4 = "Please fill out the year manufactured";
         } else {
             try {
-                Integer.parseInt(yearManufactured);
+                prodYearManufactured = Integer.parseInt(yearManufactured);
+                req.setAttribute("yearManufactured", yearManufactured);
             } catch (NumberFormatException e) {
                 msg4 = "Year Manufactured is not a valid integer";
             }
@@ -75,7 +88,11 @@ public class AddProductServlet extends HttpServlet {
         if (msg1 != "" || msg2 != "" || msg3 != "" || msg4 != ""){
             url = "/add_product_page.jsp";
         } else {
-            url = "index.jsp";
+            XeDap xd = new XeDap(prodCode, desc, prodYearManufactured, prodPrice);
+            String path = req.getServletContext().getRealPath("/WEB-INF") + "/products.txt";
+//            System.out.println("Path of file is: " + path);
+            XeDapIO.append(xd, path);
+            url = "/product_update_success.jsp";
         }
         
         req.setAttribute("msg1", msg1);

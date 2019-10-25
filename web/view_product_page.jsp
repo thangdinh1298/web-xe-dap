@@ -24,6 +24,8 @@
                 <th>Description</th>
                 <th>Years manufactured</th>
                 <th>Price</th>
+                <th></th>
+                <th></th>
             </tr>
             <%  ArrayList<XeDap> xds = (ArrayList<XeDap>) request.getAttribute("products");
                 for (XeDap xd: xds){
@@ -33,6 +35,24 @@
                 <td><%= xd.getDes() %></td>
                 <td><%= xd.getYearManufactured() %></td>
                 <td><%= xd.getPrice() %></td>
+                <td>
+                    <form action="AddProductServlet">
+                        <input type="hidden" value="<%= xd.getCode() %>" name="code">
+                        <input type="hidden" value="<%= xd.getDes() %>" name="description">
+                        <input type="hidden" value="<%= xd.getYearManufactured() %>" name="yearManufactured" >
+                        <input type="hidden" value="<%= xd.getPrice()%>" name="price">
+                        <input type="submit" value="Edit">
+                    </form>
+                </td>
+                <td>
+                    <form action="confirm_delete_product.jsp">
+                        <input type="hidden" value="<%= xd.getCode() %>" name="code">
+                        <input type="hidden" value="<%= xd.getDes() %>" name="description">
+                        <input type="hidden" value="<%= xd.getYearManufactured() %>" name="yearManufactured" >
+                        <input type="hidden" value="<%= xd.getPrice()%>" name="price">
+                        <input type="submit" value="Delete">
+                    </form>
+                </td>
             </tr>
             <% } %>
         </table>
