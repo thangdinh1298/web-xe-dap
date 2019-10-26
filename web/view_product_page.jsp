@@ -36,7 +36,7 @@
                 <td><%= xd.getYearManufactured() %></td>
                 <td><%= xd.getPrice() %></td>
                 <td>
-                    <form action="AddProductServlet">
+                    <form action="ParseProductServlet">
                         <input type="hidden" value="<%= xd.getCode() %>" name="code">
                         <input type="hidden" value="<%= xd.getDes() %>" name="description">
                         <input type="hidden" value="<%= xd.getYearManufactured() %>" name="yearManufactured" >
@@ -56,7 +56,7 @@
             </tr>
             <% } %>
         </table>
-        <form action="add_product_page.jsp">
+        <form action="add_product_page.jsp" method="POST">
             <button type="submit">Add product</button>
         </form>
     </body>

@@ -20,6 +20,10 @@
         <servlet-name>ParseProductInfoServlet</servlet-name>
         <servlet-class>Controller.ParseProductInfoServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ParseProductServlet</servlet-name>
+        <servlet-class>Controller.ParseProductServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ViewProductServlet</servlet-name>
         <url-pattern>/ViewProductServlet</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>ParseProductInfoServlet</servlet-name>
         <url-pattern>/ParseProductInfoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ParseProductServlet</servlet-name>
+        <url-pattern>/ParseProductServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

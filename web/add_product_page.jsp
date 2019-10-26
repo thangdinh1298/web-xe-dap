@@ -4,6 +4,7 @@
     Author     : thang
 --%>
 
+<%@page import="Model.XeDap"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -19,23 +20,23 @@
         <p>${msg3}</p>
         <p>${msg4}</p>
         
-        <form action="AddProductServlet" method="POST">
+        <form action="ParseProductServlet" method=<%= request.getMethod() %>>
             <table cellspacing="5">
                 <tr>
                     <td align="right">Product code:</td>
-                    <td><input type="text" name="code" value="${code}"></td>
+                    <td><input type="text" name="code" value=${xd.code}></td>
                 </tr>
                 <tr>
                     <td align="right">Product description:</td>
-                    <td><input type="text" name="description" value="${des}"></td>
+                    <td><input type="text" name="description" value=${xd.des}></td>
                 </tr>
                 <tr>
                     <td align="right">Product price:</td>
-                    <td><input type="text" name="price" value="${price}"></td>
+                    <td><input type="text" name="price" value=${xd.price}></td>
                 </tr>
                 <tr>
                     <td align="right">Year manufactured</td>
-                    <td><input type="text" name="yearManufactured" value="${yearManufactured}"></td>
+                    <td><input type="text" name="yearManufactured" value=${xd.yearManufactured}></td>
                 </tr>
             </table>
             <button type="submit">Submit</button>

@@ -25,6 +25,14 @@ import java.util.logging.Logger;
  * @author thang
  */
 public class XeDapIO {
+    public static void writeAll(ArrayList<XeDap> xds, String path){
+        File file = new File(path);
+        file.delete();
+        for (XeDap xd: xds){
+            append(xd, path);
+        }
+    }
+    
     public static void append(XeDap xd, String path){
         File file = new File(path);
         BufferedWriter os = null;

@@ -11,10 +11,10 @@ package Model;
  * @author thang
  */
 public class XeDap {
-    private int code;
+    private Integer code;
     private String des;
-    private int yearManufactured;
-    private float price; //USD
+    private Integer yearManufactured;
+    private Float price; //USD
 
     public XeDap() {
     }
@@ -26,7 +26,7 @@ public class XeDap {
         this.price = price;
     }
 
-    public int getCode() {
+    public Integer getCode() {
         return code;
     }
 
@@ -42,7 +42,7 @@ public class XeDap {
         this.des = des;
     }
 
-    public int getYearManufactured() {
+    public Integer getYearManufactured() {
         return yearManufactured;
     }
 
@@ -50,7 +50,7 @@ public class XeDap {
         this.yearManufactured = yearManufactured;
     }
 
-    public float getPrice() {
+    public Float getPrice() {
         return price;
     }
 
