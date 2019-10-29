@@ -86,6 +86,9 @@ public class ParseProductServlet extends HttpServlet {
         } else {
             xd = new XeDap(prodCode, desc, prodYearManufactured, prodPrice);
             url = "/AddProductServlet";
+            System.out.println("-------------------");
+            System.out.println("In fowarding to add prod servlet");
+            System.out.println("-------------------");
         }
         
         req.setAttribute("msg1", msg1);

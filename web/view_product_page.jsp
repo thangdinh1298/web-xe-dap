@@ -36,20 +36,22 @@
                 <td><%= xd.getYearManufactured() %></td>
                 <td><%= xd.getPrice() %></td>
                 <td>
-                    <form action="ParseProductServlet">
+                    <form action="ForwardProductServlet">
                         <input type="hidden" value="<%= xd.getCode() %>" name="code">
                         <input type="hidden" value="<%= xd.getDes() %>" name="description">
                         <input type="hidden" value="<%= xd.getYearManufactured() %>" name="yearManufactured" >
                         <input type="hidden" value="<%= xd.getPrice()%>" name="price">
+                        <input type="hidden" value="/add_product_page.jsp" name="url">
                         <input type="submit" value="Edit">
                     </form>
                 </td>
                 <td>
-                    <form action="confirm_delete_product.jsp">
+                    <form action="ForwardProductServlet">
                         <input type="hidden" value="<%= xd.getCode() %>" name="code">
                         <input type="hidden" value="<%= xd.getDes() %>" name="description">
                         <input type="hidden" value="<%= xd.getYearManufactured() %>" name="yearManufactured" >
                         <input type="hidden" value="<%= xd.getPrice()%>" name="price">
+                        <input type="hidden" value="/confirm_delete_product.jsp" name="url">
                         <input type="submit" value="Delete">
                     </form>
                 </td>

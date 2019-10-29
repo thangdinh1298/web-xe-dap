@@ -13,11 +13,20 @@
     </head>
     <body>
         <h1>Are you sure you want to delete the following product</h1>
-        <p>Product code ${param.code}</p>
-        <p>Product description ${param.description}</p>
-        <p>Year manufactured ${param.yearManufactured}</p>
-        <p>Price ${param.price}</p>
-        <button>Delete</button> 
-        <button>Cancel</button>
+        <p><strong>Product code:</strong> ${xd.code}</p>
+        <p><strong>Product description:</strong> ${xd.des}</p>
+        <p><strong>Year manufactured:</strong> ${xd.yearManufactured}</p>
+        <p><strong>Price:</strong> ${xd.price}</p>
+        <form action="DeleteProductServlet" method="POST">
+            <input type="hidden" value="${xd.code}" name="code">
+            <input type="hidden" value="${xd.des}" name="description">
+            <input type="hidden" value="${xd.yearManufactured}" name="yearManufactured" >
+            <input type="hidden" value="${xd.price}" name="price">
+            <input type="submit" value="Delete">
+        </form>
+        <form action="ViewProductServlet">
+            <button type="submit">Return to product page</button>
+        </form>
+        
     </body>
 </html>

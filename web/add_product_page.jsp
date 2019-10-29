@@ -24,19 +24,19 @@
             <table cellspacing="5">
                 <tr>
                     <td align="right">Product code:</td>
-                    <td><input type="text" name="code" value=${xd.code}></td>
+                    <td><input type="text" name="code" value="${xd.code}"></td>
                 </tr>
                 <tr>
                     <td align="right">Product description:</td>
-                    <td><input type="text" name="description" value=${xd.des}></td>
+                    <td><input type="text" name="description" value="${xd.des}"></td>
                 </tr>
                 <tr>
                     <td align="right">Product price:</td>
-                    <td><input type="text" name="price" value=${xd.price}></td>
+                    <td><input type="text" name="price" value="${xd.price}"></td>
                 </tr>
                 <tr>
                     <td align="right">Year manufactured</td>
-                    <td><input type="text" name="yearManufactured" value=${xd.yearManufactured}></td>
+                    <td><input type="text" name="yearManufactured" value="${xd.yearManufactured}"></td>
                 </tr>
             </table>
             <button type="submit">Submit</button>

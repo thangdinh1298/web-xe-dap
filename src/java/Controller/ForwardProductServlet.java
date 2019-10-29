@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author thang
  */
-public class UpdateProductServlet extends HttpServlet {
+public class ForwardProductServlet extends HttpServlet {
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -36,21 +36,25 @@ public class UpdateProductServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    {
         String code = request.getParameter("code");
         String desc = request.getParameter("description");
         String price = request.getParameter("price");
         String yearManufactured = request.getParameter("yearManufactured");
+        String url = request.getParameter("url");
         
-        XeDap xd = new XeDap(Integer.parseInt(code), desc, 
-                    Integer.parseInt(yearManufactured) ,Float.parseFloat(price));
+        XeDap xd = new XeDap(Integer.parseInt(code), desc,
+                    Integer.parseInt(yearManufactured), Float.parseFloat(price));
         
         request.setAttribute("xd", xd);
         
+//        String url = "/add_product_page.jsp";
+        
         ServletContext sc = request.getServletContext();
-        RequestDispatcher dispatcher = sc.getRequestDispatcher("/add_product_page.jsp");
+        RequestDispatcher dispatcher = sc.getRequestDispatcher(url);
         dispatcher.forward(request, response);
+        
     }
 
 }

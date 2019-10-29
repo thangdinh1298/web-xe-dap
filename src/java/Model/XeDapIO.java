@@ -26,10 +26,15 @@ import java.util.logging.Logger;
  */
 public class XeDapIO {
     public static void writeAll(ArrayList<XeDap> xds, String path){
-        File file = new File(path);
-        file.delete();
-        for (XeDap xd: xds){
-            append(xd, path);
+        try {
+            File file = new File(path);
+            file.delete();
+            file.createNewFile();
+            for (XeDap xd: xds){
+                append(xd, path);
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(XeDapIO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
@@ -68,7 +73,14 @@ public class XeDapIO {
     
     public static ArrayList<XeDap> read(String path){
         File file = new File(path);
-        System.out.println(file.getAbsolutePath());
+        if (!file.exists()){
+            try {
+                file.createNewFile();
+            } catch (IOException ex) {
+                Logger.getLogger(XeDapIO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+//        System.out.println(file.getAbsolutePath());
         ArrayList<XeDap> xds = new ArrayList<>();
         BufferedReader is = null;
         try {
@@ -80,10 +92,10 @@ public class XeDapIO {
                 try{
                    XeDap xedap = new XeDap(Integer.parseInt(attributes[0]), attributes[1],
                         Integer.parseInt(attributes[2]), Float.parseFloat(attributes[3]));
-                System.out.println(xedap.toString());
+//                System.out.println(xedap.toString());
                 xds.add(xedap);
                 } catch (Exception e ) {
-                    System.out.println(e.getMessage());
+//                    System.out.println(e.getMessage());
                 }
                 
             }

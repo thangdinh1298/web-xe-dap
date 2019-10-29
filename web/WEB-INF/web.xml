@@ -9,8 +9,8 @@
         <servlet-class>Controller.AddProductServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>UpdateProductServlet</servlet-name>
-        <servlet-class>Controller.UpdateProductServlet</servlet-class>
+        <servlet-name>ForwardProductServlet</servlet-name>
+        <servlet-class>Controller.ForwardProductServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>DeleteProductServlet</servlet-name>
@@ -33,8 +33,8 @@
         <url-pattern>/AddProductServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>UpdateProductServlet</servlet-name>
-        <url-pattern>/UpdateProductServlet</url-pattern>
+        <servlet-name>ForwardProductServlet</servlet-name>
+        <url-pattern>/ForwardProductServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>DeleteProductServlet</servlet-name>

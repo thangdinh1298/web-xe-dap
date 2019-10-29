@@ -28,7 +28,7 @@ public class AddProductServlet extends HttpServlet {
         XeDap xd = (XeDap) req.getAttribute("xd");
         String path = req.getServletContext().getRealPath("/WEB-INF") + "/products.txt";
         XeDapIO.append(xd, path);
-        String url = "/product_update_success.jsp";
+        String url = "/action_success.jsp";
         
         ServletContext sc = req.getServletContext();
         RequestDispatcher dispatcher = sc.getRequestDispatcher(url);
@@ -39,10 +39,10 @@ public class AddProductServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         XeDap xd = (XeDap) req.getAttribute("xd");
         String path = req.getServletContext().getRealPath("/WEB-INF") + "/products.txt";
+        System.out.println("-------------------");
+        System.out.println("Path of product file is: " + path);
+        System.out.println("-------------------");
         ArrayList<XeDap> xds = XeDapIO.read(path);
-        System.out.println("---------------");
-        System.out.println(xd);
-        System.out.println("---------------");
         
         for(int i = 0; i < xds.size(); i++) {
             if (xds.get(i).getCode() == xd.getCode()){
@@ -52,7 +52,7 @@ public class AddProductServlet extends HttpServlet {
         
         XeDapIO.writeAll(xds, path);
         
-        String url = "/product_update_success.jsp";
+        String url = "/action_success.jsp";
         
         ServletContext sc = req.getServletContext();
         RequestDispatcher dispatcher = sc.getRequestDispatcher(url);

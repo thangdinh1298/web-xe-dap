@@ -27,8 +27,11 @@ public class ViewProductServlet extends HttpServlet{
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String path = req.getServletContext().getRealPath("/WEB-INF") + "/products.txt";
         System.out.println(path);
-        File file = new File(path);
+        
         ArrayList<XeDap> products = XeDapIO.read(path);
+        for(XeDap product: products){
+            System.out.println(product);
+        }
         
         req.setAttribute("products", products);
         
