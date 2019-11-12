@@ -6,6 +6,7 @@
 package Controller;
 
 import Model.XeDap;
+import Model.XeDapDB;
 import Model.XeDapIO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -41,16 +42,7 @@ public class DeleteProductServlet extends HttpServlet {
         }
         
         
-        String path = req.getServletContext().getRealPath("/WEB-INF") + "/products.txt";
-        ArrayList<XeDap> xds = XeDapIO.read(path);
-
-        for(int i = 0; i < xds.size(); i++){
-            if (xds.get(i).getCode().equals(prodCode)){
-                xds.remove(i);
-            }
-        }
-        
-        XeDapIO.writeAll(xds, path);
+        XeDapDB.deleteProductByCode(prodCode);
         
         String url = "/action_success.jsp";
         

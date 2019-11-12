@@ -6,6 +6,7 @@
 package Controller;
 
 import Model.XeDap;
+import Model.XeDapDB;
 import Model.XeDapIO;
 import java.io.File;
 import java.io.IOException;
@@ -28,7 +29,7 @@ public class ViewProductServlet extends HttpServlet{
         String path = req.getServletContext().getRealPath("/WEB-INF") + "/products.txt";
         System.out.println(path);
         
-        ArrayList<XeDap> products = XeDapIO.read(path);
+        ArrayList<XeDap> products = /*XeDapIO.read(path);*/ XeDapDB.read();
         for(XeDap product: products){
             System.out.println(product);
         }

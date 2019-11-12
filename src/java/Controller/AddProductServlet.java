@@ -6,6 +6,7 @@
 package Controller;
 
 import Model.XeDap;
+import Model.XeDapDB;
 import Model.XeDapIO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -26,8 +27,9 @@ public class AddProductServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         XeDap xd = (XeDap) req.getAttribute("xd");
-        String path = req.getServletContext().getRealPath("/WEB-INF") + "/products.txt";
-        XeDapIO.append(xd, path);
+        
+        XeDapDB.insertProduct(xd);
+        
         String url = "/action_success.jsp";
         
         ServletContext sc = req.getServletContext();
@@ -38,19 +40,8 @@ public class AddProductServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         XeDap xd = (XeDap) req.getAttribute("xd");
-        String path = req.getServletContext().getRealPath("/WEB-INF") + "/products.txt";
-        System.out.println("-------------------");
-        System.out.println("Path of product file is: " + path);
-        System.out.println("-------------------");
-        ArrayList<XeDap> xds = XeDapIO.read(path);
         
-        for(int i = 0; i < xds.size(); i++) {
-            if (xds.get(i).getCode() == xd.getCode()){
-                xds.set(i, xd);
-            }
-        }
-        
-        XeDapIO.writeAll(xds, path);
+        XeDapDB.updateProduct(xd);
         
         String url = "/action_success.jsp";
         

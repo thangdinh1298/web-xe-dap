@@ -5,7 +5,6 @@
 --%>
 <%@ taglib prefix="c" 
     uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="custom" uri="/WEB-INF/tlds/customTags.tld"%>
 <%@page import="java.io.File"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Model.XeDapIO"%>

@@ -26,23 +26,23 @@
             <table cellspacing="5">
                 <tr>
                     <td align="right">Product code:</td>
-                    <td><input type="text" name="code" value="${xd.code}">
-                            <c:if test="${empty xd.code}"><custom:fieldMissingNotifier/></c:if></td>
+                    <td><input type="text" name="code" value="${xd.code}"></td>
+                    <td><c:if test="${empty xd.code}"><custom:fieldMissingNotifier/></c:if></td>
                 </tr>
                 <tr>
                     <td align="right">Product description:</td>
-                    <td><input type="text" name="description" value="${xd.des}">
-                            <c:if test="${empty xd.des}"><custom:fieldMissingNotifier/></c:if></td>
+                    <td><input type="text" name="description" value="${xd.des}"></td>
+                    <td><c:if test="${empty xd.des}"><custom:fieldMissingNotifier/></c:if></td>
                 </tr>
                 <tr>
                     <td align="right">Product price:</td>
-                    <td><input type="text" name="price" value="${xd.price}">
-                            <c:if test="${empty xd.price}"><custom:fieldMissingNotifier/></c:if></td>
+                    <td><input type="text" name="price" value="${xd.price}"></td>
+                    <td><c:if test="${empty xd.price}"><custom:fieldMissingNotifier/></c:if></td>
                 </tr>
                 <tr>
                     <td align="right">Year manufactured</td>
-                    <td><input type="text" name="yearManufactured" value="${xd.yearManufactured}">
-                            <c:if test="${empty xd.yearManufactured}"><custom:fieldMissingNotifier/></c:if></td>
+                    <td><input type="text" name="yearManufactured" value="${xd.yearManufactured}"></td>
+                    <td><c:if test="${empty xd.yearManufactured}"><custom:fieldMissingNotifier/></c:if></td>
                 </tr>
             </table>
             <button type="submit">Submit</button>
