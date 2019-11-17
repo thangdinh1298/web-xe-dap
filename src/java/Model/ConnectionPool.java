@@ -17,7 +17,7 @@ public class ConnectionPool
         {
             InitialContext ic = new InitialContext();
             dataSource = (DataSource) 
-                ic.lookup("java:app/jdbc/XeDapConnectionPool");
+                ic.lookup("jdbc/XeDapConnection");
         }  catch(Exception e)
         {
             e.printStackTrace();
