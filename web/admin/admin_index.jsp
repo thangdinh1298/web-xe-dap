@@ -9,11 +9,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Home</title>
+        <title>Product Maintenance</title>
     </head>
     <body>
-        <h1>Choose your role</h1>
-        <p> <a href="admin/admin_index.jsp"> I'm an admin </a> </p>
-        <p> <a href=""> I'm an user </a> </p>
+        <h1>Product Maintenance</h1>
+        <a href="${pageContext.request.contextPath}/ViewProductServlet"> View Products </a>
     </body>
 </html>

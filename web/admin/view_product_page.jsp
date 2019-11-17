@@ -35,29 +35,29 @@
                 <td>${xd.yearManufactured}</td>
                 <td>${xd.price}</td>
                 <td>
-                    <form action="ForwardProductServlet">
+                    <form action="${pageContext.request.contextPath}/ForwardProductServlet">
                         <input type="hidden" value="${xd.code}" name="code">
                         <input type="hidden" value="${xd.des}" name="description">
                         <input type="hidden" value="${xd.yearManufactured}" name="yearManufactured" >
                         <input type="hidden" value="${xd.price}" name="price">
-                        <input type="hidden" value="/add_product_page.jsp" name="url">
+                        <input type="hidden" value="/admin/add_product_page.jsp" name="url">
                         <input type="submit" value="Edit">
                     </form>
                 </td>
                 <td>
-                    <form action="ForwardProductServlet">
+                    <form action="${pageContext.request.contextPath}/ForwardProductServlet">
                         <input type="hidden" value="${xd.code}" name="code">
                         <input type="hidden" value="${xd.des}" name="description">
                         <input type="hidden" value="${xd.yearManufactured}" name="yearManufactured" >
                         <input type="hidden" value="${xd.price}" name="price">
-                        <input type="hidden" value="/confirm_delete_product.jsp" name="url">
+                        <input type="hidden" value="/admin/confirm_delete_product.jsp" name="url">
                         <input type="submit" value="Delete">
                     </form>
                 </td>
             </tr>
             </c:forEach>
         </table>
-        <form action="add_product_page.jsp" method="POST">
+        <form action="admin/add_product_page.jsp" method="POST">
             <button type="submit">Add product</button>
         </form>
     </body>

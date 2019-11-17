@@ -82,7 +82,7 @@ public class ParseProductServlet extends HttpServlet {
         }
         
         if (msg1 != "" || msg2 != "" || msg3 != "" || msg4 != ""){
-            url = "/add_product_page.jsp";
+            url = "/admin/add_product_page.jsp";
         } else {
             xd = new XeDap(prodCode, desc, prodYearManufactured, prodPrice);
             url = "/AddProductServlet";
