@@ -31,10 +31,13 @@ public class ViewProductServlet extends HttpServlet{
             System.out.println(product);
         }
         
+        String url;
+
         req.setAttribute("products", products);
+        url = (String) req.getParameter("url");
         
         ServletContext sc = req.getServletContext();
-        RequestDispatcher dispatcher = sc.getRequestDispatcher("/admin/view_product_page.jsp");
+        RequestDispatcher dispatcher = sc.getRequestDispatcher(url);
         dispatcher.forward(req, resp);
         
     }

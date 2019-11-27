@@ -14,6 +14,11 @@
     <body>
         <h1>Choose your role</h1>
         <p> <a href="admin/admin_index.jsp"> I'm an admin </a> </p>
-        <p> <a href=""> I'm an user </a> </p>
+        <p> 
+            <form action="/xe_dap/ViewProductServlet">
+                <input type="hidden" value="/user/index.jsp" name="url">
+                <button type="submit">View Products</button>
+            </form> 
+        </p>
     </body>
 </html>

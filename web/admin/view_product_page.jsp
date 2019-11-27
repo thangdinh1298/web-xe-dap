@@ -35,7 +35,7 @@
                 <td>${xd.yearManufactured}</td>
                 <td>${xd.price}</td>
                 <td>
-                    <form action="${pageContext.request.contextPath}/ForwardProductServlet">
+                    <form action="/xe_dap/ForwardProductServlet">
                         <input type="hidden" value="${xd.code}" name="code">
                         <input type="hidden" value="${xd.des}" name="description">
                         <input type="hidden" value="${xd.yearManufactured}" name="yearManufactured" >
@@ -45,7 +45,7 @@
                     </form>
                 </td>
                 <td>
-                    <form action="${pageContext.request.contextPath}/ForwardProductServlet">
+                    <form action="/xe_dap/ForwardProductServlet">
                         <input type="hidden" value="${xd.code}" name="code">
                         <input type="hidden" value="${xd.des}" name="description">
                         <input type="hidden" value="${xd.yearManufactured}" name="yearManufactured" >

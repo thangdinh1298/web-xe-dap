@@ -22,7 +22,7 @@
         <p>${msg3}</p>
         <p>${msg4}</p>
         
-        <form action="${pageContext.request.contextPath}/ParseProductServlet" method=<%= request.getMethod() %>>
+        <form action="/xe_dap/ParseProductServlet" method=<%= request.getMethod() %>>
             <table cellspacing="5">
                 <tr>
                     <td align="right">Product code:</td>

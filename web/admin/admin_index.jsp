@@ -13,6 +13,9 @@
     </head>
     <body>
         <h1>Product Maintenance</h1>
-        <a href="${pageContext.request.contextPath}/ViewProductServlet"> View Products </a>
+        <form action="/xe_dap/ViewProductServlet">
+            <input type="hidden" value="/admin/view_product_page.jsp" name="url">
+            <button type="submit">View Products</button>
+        </form>
     </body>
 </html>
