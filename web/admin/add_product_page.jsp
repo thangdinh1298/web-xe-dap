@@ -21,6 +21,7 @@
         <p>${msg2}</p>
         <p>${msg3}</p>
         <p>${msg4}</p>
+        <p>${msg5}</p>
         
         <form action="/xe_dap/ParseProductServlet" method=<%= request.getMethod() %>>
             <table cellspacing="5">
@@ -43,6 +44,11 @@
                     <td align="right">Year manufactured</td>
                     <td><input type="text" name="yearManufactured" value="${xd.yearManufactured}"></td>
                     <td><c:if test="${empty xd.yearManufactured}"><custom:fieldMissingNotifier/></c:if></td>
+                </tr>
+                <tr>
+                    <td align="right">Image Name</td>
+                    <td><input type="text" name="imgLink" value="${xd.imgLink}"></td>
+                    <td><c:if test="${empty xd.imgLink}"><custom:fieldMissingNotifier/></c:if></td>
                 </tr>
             </table>
             <button type="submit">Submit</button>

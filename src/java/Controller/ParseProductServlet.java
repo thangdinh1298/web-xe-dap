@@ -28,6 +28,7 @@ public class ParseProductServlet extends HttpServlet {
         String desc = req.getParameter("description");
         String price = req.getParameter("price");
         String yearManufactured = req.getParameter("yearManufactured");
+        String imgLink = req.getParameter("imgLink");
         
         Integer prodCode = null;
         Integer prodYearManufactured = null;
@@ -38,6 +39,7 @@ public class ParseProductServlet extends HttpServlet {
         String msg2 = "";
         String msg3 = "";
         String msg4 = "";
+        String msg5 = "";
         String url;
        
         XeDap xd = new XeDap();
@@ -81,10 +83,17 @@ public class ParseProductServlet extends HttpServlet {
             }
         }
         
-        if (msg1 != "" || msg2 != "" || msg3 != "" || msg4 != ""){
+        if (imgLink.equals("")) {
+            msg5 = "Please fill out the year manufactured";
+        } else{
+            xd.setImgLink(imgLink);
+        }
+        
+        if (msg1 != "" || msg2 != "" || msg3 != "" || msg4 != "" || msg5 != ""){
             url = "/admin/add_product_page.jsp";
         } else {
             xd = new XeDap(prodCode, desc, prodYearManufactured, prodPrice);
+            xd.setImgLink("img/" + imgLink);
             url = "/AddProductServlet";
             System.out.println("-------------------");
             System.out.println("In fowarding to add prod servlet");
@@ -95,6 +104,7 @@ public class ParseProductServlet extends HttpServlet {
         req.setAttribute("msg2", msg2);
         req.setAttribute("msg3", msg3);
         req.setAttribute("msg4", msg4);
+        req.setAttribute("msg5", msg5);
         req.setAttribute("xd", xd);
         
         ServletContext sc = req.getServletContext();

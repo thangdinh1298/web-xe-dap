@@ -15,6 +15,8 @@ public class XeDap {
     private String des;
     private Integer yearManufactured;
     private Float price; //USD
+    private String imgLink;
+
 
     public XeDap() {
     }
@@ -56,6 +58,13 @@ public class XeDap {
 
     public void setPrice(float price) {
         this.price = price;
+    }
+    public String getImgLink() {
+        return imgLink;
+    }
+
+    public void setImgLink(String imgLink) {
+        this.imgLink = imgLink;
     }
 
     @Override

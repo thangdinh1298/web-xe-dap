@@ -45,7 +45,7 @@
 				<c:forEach var="xd" items = "${products}">
 					<li>
 						<a href="#">
-							<img src="img/property_1.jpg" alt="" title="" class="property_img"/>
+							<img src="${xd.imgLink}" alt="" title="" class="property_img"/>
 						</a>
 						<span class="price">$${xd.price}</span>
 						<div class="property_details">

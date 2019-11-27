@@ -31,15 +31,17 @@ public class XeDapDB {
                 ps = conn.prepareStatement(query);
                 ResultSet rs = ps.executeQuery();
                 while(rs.next()){
-                    String des = rs.getString(2);
-                    int yearManufactured = rs.getInt(3);
-                    float price = rs.getFloat(4);
-                    int code = rs.getInt(1);
+                    String des = rs.getString("des");
+                    int yearManufactured = rs.getInt("yearManufactured");
+                    float price = rs.getFloat("price");
+                    int code = rs.getInt("code");
+                    String imgLink = rs.getString("img_url");
                     XeDap xd = new XeDap();
                     xd.setDes(des);
                     xd.setYearManufactured(yearManufactured);
                     xd.setPrice(price);
                     xd.setCode(code);
+                    xd.setImgLink(imgLink);
                     xds.add(xd);
                 }
             } catch (SQLException ex) {
@@ -84,14 +86,15 @@ public class XeDapDB {
         if (conn != null) {
             try {
                 String query = "UPDATE XeDap "
-                        + "SET des=?, yearManufactured=?, price=?"
+                        + "SET des=?, yearManufactured=?, price=?, img_url=?"
                         + "WHERE code=?";
                 
                 ps = conn.prepareStatement(query);
                 ps.setString(1, newProd.getDes());
                 ps.setInt(2, newProd.getYearManufactured());
                 ps.setFloat(3, newProd.getPrice());
-                ps.setInt(4, newProd.getCode());
+                ps.setString(4, newProd.getImgLink());
+                ps.setInt(5, newProd.getCode());
                 ps.executeUpdate();
             } catch (SQLException ex) {
                 Logger.getLogger(XeDapDB.class.getName()).log(Level.SEVERE, null, ex);
@@ -110,14 +113,15 @@ public class XeDapDB {
         
         if (conn != null) {
             try {
-                String query = "INSERT INTO XeDap(code, des, yearManufactured, price)"
-                        + "VALUES(?,?,?,?)";
+                String query = "INSERT INTO XeDap(code, des, yearManufactured, price, img_url)"
+                        + "VALUES(?,?,?,?, ?)";
                 
                 ps = conn.prepareStatement(query);
                 ps.setString(2, newProd.getDes());
                 ps.setInt(3, newProd.getYearManufactured());
                 ps.setFloat(4, newProd.getPrice());
                 ps.setInt(1, newProd.getCode());
+                ps.setString(5, newProd.getImgLink());
                 ps.executeUpdate();
             } catch (SQLException ex) {
                 Logger.getLogger(XeDapDB.class.getName()).log(Level.SEVERE, null, ex);

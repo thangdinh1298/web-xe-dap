@@ -25,6 +25,7 @@
                 <th>Description</th>
                 <th>Years manufactured</th>
                 <th>Price</th>
+                <th>Image Link</th>
                 <th></th>
                 <th></th>
             </tr>
@@ -34,12 +35,15 @@
                 <td>${xd.des}</td>
                 <td>${xd.yearManufactured}</td>
                 <td>${xd.price}</td>
+                <td>${xd.imgLink}</td>
+                
                 <td>
                     <form action="/xe_dap/ForwardProductServlet">
                         <input type="hidden" value="${xd.code}" name="code">
                         <input type="hidden" value="${xd.des}" name="description">
                         <input type="hidden" value="${xd.yearManufactured}" name="yearManufactured" >
                         <input type="hidden" value="${xd.price}" name="price">
+                        <input type="hidden" value="${xd.imgLink}" name="imgLink">
                         <input type="hidden" value="/admin/add_product_page.jsp" name="url">
                         <input type="submit" value="Edit">
                     </form>
@@ -50,6 +54,7 @@
                         <input type="hidden" value="${xd.des}" name="description">
                         <input type="hidden" value="${xd.yearManufactured}" name="yearManufactured" >
                         <input type="hidden" value="${xd.price}" name="price">
+                        <input type="hidden" value="${xd.imgLink}" name="imgLink">
                         <input type="hidden" value="/admin/confirm_delete_product.jsp" name="url">
                         <input type="submit" value="Delete">
                     </form>

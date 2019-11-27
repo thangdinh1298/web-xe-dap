@@ -1,4 +1,4 @@
-create database XeDap;
+create database if not exists XeDap;
 use XeDap;
  
  CREATE TABLE if not exists USERS (
@@ -14,12 +14,12 @@ CREATE TABLE if not exists USERS_GROUPS (
 );
 
 CREATE TABLE if not exists XeDap (
-   id INT(11) NOT NULL,
+   id INT(11) NOT NULL AUTO_INCREMENT,
    code INT(11) NOT NULL UNIQUE,
    des VARCHAR(255) NOT NULL,
    yearManufactured INT(11),
    price FLOAT,
 	img_url VARCHAR(255),
-   PRIMARY KEY(code)
-)
+   PRIMARY KEY(id)
+);
 

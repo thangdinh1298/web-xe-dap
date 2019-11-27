@@ -42,10 +42,12 @@ public class ForwardProductServlet extends HttpServlet {
         String desc = request.getParameter("description");
         String price = request.getParameter("price");
         String yearManufactured = request.getParameter("yearManufactured");
+        String imgLink = request.getParameter("imgLink");
         String url = request.getParameter("url");
         
         XeDap xd = new XeDap(Integer.parseInt(code), desc,
                     Integer.parseInt(yearManufactured), Float.parseFloat(price));
+        xd.setImgLink(imgLink);
         
         request.setAttribute("xd", xd);
         

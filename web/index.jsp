@@ -17,7 +17,7 @@
         <p> 
             <form action="/xe_dap/ViewProductServlet">
                 <input type="hidden" value="/user/index.jsp" name="url">
-                <button type="submit">View Products</button>
+                <input value="I'm a user" type="submit"></input>
             </form> 
         </p>
     </body>
