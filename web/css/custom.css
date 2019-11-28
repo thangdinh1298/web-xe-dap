@@ -1,0 +1,39 @@
+.user-custom {
+	max-width: 60%;
+    text-align: center;
+}
+
+.weekly-item {
+	display: flex;
+	align-items: center;
+	padding: 5px 0;
+}
+
+.weekly-item .number {
+	font-size: 20px;
+	padding: 0 5px;
+}
+
+.weekly-item .info {
+	font-size: 16px;
+	flex-grow: 1;
+}
+
+.weekly-item .song-title {
+	margin-bottom: 5px;
+}
+
+.weekly-item .singer{
+	font-size: 14px;
+	color : #0000009c;
+}
+
+.weekly-item .view-count {
+	font-size: 14px;
+	color: #0000009c;
+}
+
+.fix-img-fluid {
+	height: 100px;
+	width: 150px;
+  }

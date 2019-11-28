@@ -7,8 +7,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 	
-	<link rel="stylesheet" type="text/css" href="css/reset.css">
-	<link rel="stylesheet" type="text/css" href="css/responsive.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/responsive.css">
 
 	<!-- <script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/main.js"></script> -->
@@ -18,13 +18,11 @@
 	<section class="hero">
 		<header>
 			<div class="wrapper">
-				<a href="#"><img src="img/logo.png" class="logo" alt="" titl=""/></a>
+				<a href="#"><img src="${pageContext.request.contextPath}/img/logo.png" class="logo" alt="" titl=""/></a>
 				<a href="#" class="hamburger"></a>
 				<nav>
 					<ul>
-						<li><a href="#">Buy</a></li>
-						<li><a href="#">Rent</a></li>
-						<li><a href="#">Sell</a></li>
+						<li><a href="#">Shopping Cart</a></li>
 						<li><a href="#">About</a></li>
 						<li><a href="#">Contact</a></li>
 					</ul>
@@ -44,7 +42,7 @@
 			<ul class="properties_list">
 				<c:forEach var="xd" items = "${products}">
 					<li>
-						<a href="#">
+						<a href="${pageContext.request.contextPath}/ForwardProductServlet?code=${xd.code}&price=${xd.price}&description=${xd.des}&yearManufactured=${xd.yearManufactured}&imgLink=${xd.imgLink}&url=/user/product_detail.jsp">
 							<img src="${xd.imgLink}" alt="" title="" class="property_img"/>
 						</a>
 						<span class="price">$${xd.price}</span>
@@ -57,9 +55,6 @@
 					</li>
 				</c:forEach>
 			</ul>
-			<div class="more_listing">
-				<a href="#" class="more_listing_btn">View More Listings</a>
-			</div>
 		</div>
 	</section>	<!--  end listing section  -->
 
@@ -78,21 +73,11 @@
 
 				<li class="links">
 					<ul>
-						<li><a href="#">Appartements</a></li>
-						<li><a href="#">Houses</a></li>
-						<li><a href="#">Villas</a></li>
-						<li><a href="#">Mansions</a></li>
-						<li><a href="#">...</a></li>
-					</ul>
-				</li>
-
-				<li class="links">
-					<ul>
 						<li><a href="#">New York</a></li>
 						<li><a href="#">Los Anglos</a></li>
 						<li><a href="#">Miami</a></li>
 						<li><a href="#">Washington</a></li>
-						<li><a href="#">...</a></li>
+						<li><a href="#">Ha Noi</a></li>
 					</ul>
 				</li>
 

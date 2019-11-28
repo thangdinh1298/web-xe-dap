@@ -44,14 +44,15 @@ public class ForwardProductServlet extends HttpServlet {
         String yearManufactured = request.getParameter("yearManufactured");
         String imgLink = request.getParameter("imgLink");
         String url = request.getParameter("url");
+
+        System.out.println("--------------------------------");
+        System.out.println("url is: " + url);
         
         XeDap xd = new XeDap(Integer.parseInt(code), desc,
                     Integer.parseInt(yearManufactured), Float.parseFloat(price));
         xd.setImgLink(imgLink);
         
         request.setAttribute("xd", xd);
-        
-//        String url = "/add_product_page.jsp";
         
         ServletContext sc = request.getServletContext();
         RequestDispatcher dispatcher = sc.getRequestDispatcher(url);
