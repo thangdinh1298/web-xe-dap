@@ -20,7 +20,7 @@
         <h1>Choose your role</h1>
         <button><a href="admin/admin_index.jsp" class="button"> I'm an admin </a> </button> <br>
         <p> 
-            <form action="/xe_dap/ViewProductServlet">
+            <form action="${pageContext.request.contextPath}/ViewProductServlet">
                 <input type="hidden" value="/user/index.jsp" name="url">
                 <input value="I'm a user" type="submit"></input>
             </form> 

@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1>Product Maintenance</h1>
-        <form action="/xe_dap/ViewProductServlet">
+        <form action="${pageContext.request.contextPath}/ViewProductServlet">
             <input type="hidden" value="/admin/view_product_page.jsp" name="url">
             <button type="submit">View Products</button>
         </form>

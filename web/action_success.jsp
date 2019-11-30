@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1>Your product has been updated successfully</h1>
-        <form action="/xe_dap/ViewProductServlet">
+        <form action="${pageContext.request.contextPath}/ViewProductServlet">
             <button type="submit">Return to product page</button>
             <input type="hidden" value="/admin/view_product_page.jsp" name="url">
         </form>

@@ -103,7 +103,7 @@
                 </div>
                 <div class="box-footer d-flex justify-content-between align-items-center">
                   <div class="left-col">
-                      <form action="/xe_dap/ViewProductServlet">
+                      <form action="${pageContext.request.contextPath}/ViewProductServlet">
                             <input type="hidden" value="/user/index.jsp" name="url">
                             <input value="Continue Shopping" type="submit" class="btn btn-secondary mt-0"></input>
                       </form>

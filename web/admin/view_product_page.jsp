@@ -38,7 +38,7 @@
                 <td>${xd.imgLink}</td>
                 
                 <td>
-                    <form action="/xe_dap/ForwardProductServlet">
+                    <form action="${pageContext.request.contextPath}/ForwardProductServlet">
                         <input type="hidden" value="${xd.code}" name="code">
                         <input type="hidden" value="${xd.des}" name="description">
                         <input type="hidden" value="${xd.yearManufactured}" name="yearManufactured" >
@@ -49,7 +49,7 @@
                     </form>
                 </td>
                 <td>
-                    <form action="/xe_dap/ForwardProductServlet">
+                    <form action="${pageContext.request.contextPath}/ForwardProductServlet">
                         <input type="hidden" value="${xd.code}" name="code">
                         <input type="hidden" value="${xd.des}" name="description">
                         <input type="hidden" value="${xd.yearManufactured}" name="yearManufactured" >
