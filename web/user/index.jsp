@@ -16,25 +16,12 @@
 <body>
 
 	<section class="hero">
-		<header>
-			<div class="wrapper">
-				<a href="#"><img src="${pageContext.request.contextPath}/img/logo.png" class="logo" alt="" titl=""/></a>
-				<a href="#" class="hamburger"></a>
-				<nav>
-					<ul>
-						<li><a href="#">Shopping Cart</a></li>
-						<li><a href="#">About</a></li>
-						<li><a href="#">Contact</a></li>
-					</ul>
-					<a href="#" class="login_btn">Login</a>
-				</nav>
-			</div>
-		</header><!--  end header section  -->
+		<jsp:include page="/user/header.jsp"/>
 
-			<section class="caption">
-				<h2 class="caption">Find You Dream Bike</h2>
-				<h3 class="properties">Bikes - Apparels - Gears</h3>
-			</section>
+                <section class="caption">
+                        <h2 class="caption">Find You Dream Bike</h2>
+                        <h3 class="properties">Bikes - Apparels - Gears</h3>
+                </section>
 	</section><!--  end hero section  -->
 
 	<section class="listings">
@@ -58,45 +45,7 @@
 		</div>
 	</section>	<!--  end listing section  -->
 
-	<footer>
-		<div class="wrapper footer">
-			<ul>
-				<li class="links">
-					<ul>
-						<li><a href="#">About</a></li>
-						<li><a href="#">Support</a></li>
-						<li><a href="#">Terms</a></li>
-						<li><a href="#">Policy</a></li>
-						<li><a href="#">Contact</a></li>
-					</ul>
-				</li>
-
-				<li class="links">
-					<ul>
-						<li><a href="#">New York</a></li>
-						<li><a href="#">Los Anglos</a></li>
-						<li><a href="#">Miami</a></li>
-						<li><a href="#">Washington</a></li>
-						<li><a href="#">Ha Noi</a></li>
-					</ul>
-				</li>
-
-				<li class="about">
-					<p>Day la trang web ban xe dap</p>
-					<ul>
-						<li><a href="http://facebook.com/" class="facebook" target="_blank"></a></li>
-						<li><a href="http://twitter.com/" class="twitter" target="_blank"></a></li>
-						<li><a href="http://plus.google.com/" class="google" target="_blank"></a></li>
-						<li><a href="#" class="skype"></a></li>
-					</ul>
-				</li>
-			</ul>
-		</div>
-
-		<div class="copyrights wrapper">
-			Copyright 2019 <a href="#" target="_blank" class="ph_link" title="Xe Dap">XeDap.com</a>. All Rights Reserved.
-		</div>
-	</footer><!--  end footer  -->
+	<jsp:include page="/user/footer.jsp"/>
 	
 </body>
 </html>

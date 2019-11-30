@@ -10,10 +10,15 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Home</title>
+        <style>
+            .button{
+                
+            }
+        </style>
     </head>
     <body>
         <h1>Choose your role</h1>
-        <p> <a href="admin/admin_index.jsp"> I'm an admin </a> </p>
+        <button><a href="admin/admin_index.jsp" class="button"> I'm an admin </a> </button> <br>
         <p> 
             <form action="/xe_dap/ViewProductServlet">
                 <input type="hidden" value="/user/index.jsp" name="url">
@@ -21,4 +26,5 @@
             </form> 
         </p>
     </body>
+
 </html>
