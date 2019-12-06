@@ -1,3 +1,9 @@
+<%-- 
+    Document   : index
+    Created on : Nov 30, 2019, 1:07:39 PM
+    Author     : thang
+--%>
+
 <!DOCTYPE html>
 <%@ taglib prefix="c" 
     uri="http://java.sun.com/jsp/jstl/core" %>
@@ -10,8 +16,6 @@
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/responsive.css">
 
-	<!-- <script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/main.js"></script> -->
 </head>
 <body>
 

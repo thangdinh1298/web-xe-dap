@@ -1,3 +1,9 @@
+<%-- 
+    Document   : product_detail
+    Created on : Nov 30, 2019, 1:07:39 PM
+    Author     : thang
+--%>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -10,7 +16,7 @@
     <!-- Bootstrap CSS-->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/user/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.green.css" id="theme-stylesheet">
-    <!-- Custom stylesheet - for your changes-->
+    <!-- Custom stylesheet-->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/custom.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/reset.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/responsive.css">
