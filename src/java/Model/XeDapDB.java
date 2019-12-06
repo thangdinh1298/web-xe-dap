@@ -19,6 +19,7 @@ import java.util.logging.Logger;
  */
 public class XeDapDB {
     public static ArrayList<XeDap> read(){
+        System.out.println("Reading");
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection conn = pool.getConnection();
         ArrayList<XeDap> xds = new ArrayList<>();
@@ -31,10 +32,10 @@ public class XeDapDB {
                 ps = conn.prepareStatement(query);
                 ResultSet rs = ps.executeQuery();
                 while(rs.next()){
-                    String des = rs.getString(2);
-                    int yearManufactured = rs.getInt(3);
-                    float price = rs.getFloat(4);
-                    int code = rs.getInt(1);
+                    String des = rs.getString("des");
+                    int yearManufactured = rs.getInt("yearManufactured");
+                    float price = rs.getFloat("price");
+                    int code = rs.getInt("code");
                     XeDap xd = new XeDap();
                     xd.setDes(des);
                     xd.setYearManufactured(yearManufactured);
